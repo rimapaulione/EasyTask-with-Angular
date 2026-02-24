@@ -1,1 +1,39 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --color-bg-deep: #0e0418;
+  --color-bg-dark: #1a001f;
+  --color-bg-purple: #4b177a;
+  --color-bg-card: #3b1364;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #c3b3d8;
+  --color-text-muted: #d5c7ea;
+  --color-accent: #9b59d0;
+  --color-accent-light: #b984e8;
+  --color-border: rgba(195, 179, 216, 0.12);
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.4);
+  --shadow-glow: 0 0 60px rgba(75, 23, 122, 0.25);
+  --transition: 0.3s ease;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: radial-gradient(circle at top, #4b177a 0%, #1a001f 40%, #0e0418 100%);
+  background-attachment: fixed;
+  color: var(--color-text-secondary);
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
