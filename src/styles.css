@@ -1,8 +1,10 @@
 :root {
   --color-bg-deep: #0e0418;
   --color-bg-dark: #1a001f;
-  --color-bg-purple: #4b177a;
-  --color-bg-card: #3b1364;
+  --color-bg-purple: #30134a;
+  --color-bg-card: #241532;
+  --color-bg-active: #9b6f93;
+  --color-text-black: #150722;
   --color-text-primary: #ffffff;
   --color-text-secondary: #c3b3d8;
   --color-text-muted: #d5c7ea;
@@ -17,12 +19,21 @@
   --transition: 0.3s ease;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
-html {
+html,
+body {
   height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+html {
   scroll-behavior: smooth;
 }
 
@@ -31,9 +42,6 @@ body {
   background: radial-gradient(circle at top, #4b177a 0%, #1a001f 40%, #0e0418 100%);
   background-attachment: fixed;
   color: var(--color-text-secondary);
-  margin: 0;
-  padding: 0;
-  min-height: 100%;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }

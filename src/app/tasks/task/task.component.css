@@ -1,6 +1,6 @@
 article {
   padding: 1.25rem 1.5rem;
-  background: linear-gradient(135deg, rgba(59, 19, 100, 0.8) 0%, rgba(3, 1, 4, 0.85) 100%);
+  background: var(--color-bg-active);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--color-border);
@@ -41,7 +41,7 @@ h2 {
 time {
   display: block;
   font-size: 0.78rem;
-  color: var(--color-text-muted);
+  color: var(--color-text-black);
   opacity: 0.7;
   margin-bottom: 0.5rem;
 }
@@ -49,7 +49,7 @@ time {
 p {
   margin: 0 0 0.75rem;
   font-size: 0.9rem;
-  color: var(--color-text-secondary);
+  color: var(--color-text-primary);
   line-height: 1.5;
 }
 

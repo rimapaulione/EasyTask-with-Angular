@@ -14,9 +14,12 @@
   width: 20rem;
 }
 
-.user-avatar:hover {
+button:hover,
+.active {
   transform: scale(1.04);
-  box-shadow: 0 0 28px rgba(155, 89, 208, 0.65);
+  box-shadow: 0 0 28px rgba(155, 89, 208, 0.25);
+  background: var(--color-bg-active);
+  color: var(--color-text-black);
 }
 
 .user-avatar img {
