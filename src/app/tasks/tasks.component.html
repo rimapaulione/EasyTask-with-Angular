@@ -9,13 +9,15 @@
     </menu>
   </header>
 
-  <ul>
-    @for (task of selectedUserTasks; track task.id) {
-      <li>
-        <app-task [task]="task" />
-      </li>
-    } @empty {
-      <p>{{ 'Add task !' }}</p>
-    }
-  </ul>
+  @if (selectedUserTasks.length === 0) {
+    <p>Add task!</p>
+  } @else {
+    <ul>
+      @for (task of selectedUserTasks; track task.id) {
+        <li>
+          <app-task [task]="task" />
+        </li>
+      }
+    </ul>
+  }
 </app-card>
