@@ -1,8 +1,7 @@
 @if (isAddingTask) {
-  <app-modal (cancelModal)="onCancelAddTask()" (add)="onAddTask($event)"/>
+  <app-modal (cancelModal)="onCancelAddTask()" (add)="onAddTask($event)" />
 }
-
-<section id="task">
+<app-card>
   <header>
     <h4>{{ name }}'s Tasks</h4>
     <menu>
@@ -17,4 +16,4 @@
       </li>
     }
   </ul>
-</section>
+</app-card>

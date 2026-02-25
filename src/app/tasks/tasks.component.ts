@@ -4,11 +4,12 @@ import { DUMMY_TASKS } from '../dummy-tasks';
 import { TaskComponent } from './task/task.component';
 import { ModalComponent } from './modal/modal.component';
 import { type NewTask } from './task/task.model';
+import { CardComponent } from '../ui/card/card.component';
 
 @Component({
   selector: 'app-tasks',
   standalone: true,
-  imports: [TaskComponent, ModalComponent],
+  imports: [TaskComponent, ModalComponent, CardComponent],
   templateUrl: './tasks.component.html',
   styleUrl: './tasks.component.css',
 })
