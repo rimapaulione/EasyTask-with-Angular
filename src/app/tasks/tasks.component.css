@@ -31,6 +31,9 @@ header h4 {
   font-weight: 700;
   color: var(--color-text-primary);
   letter-spacing: -0.01em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 menu {
@@ -52,6 +55,7 @@ menu button {
   transition:
     transform var(--transition),
     box-shadow var(--transition);
+  width: 7rem;
 }
 
 menu button:hover {
@@ -65,7 +69,7 @@ ul {
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 0.5rem;
   flex: 1;
   min-height: 0;
   overflow-y: auto;
