@@ -1,10 +1,9 @@
-import { Component, Input } from '@angular/core';
-
-import { DUMMY_TASKS } from '../dummy-tasks';
+import { Component, inject, Input } from '@angular/core';
 import { TaskComponent } from './task/task.component';
 import { ModalComponent } from './modal/modal.component';
 import { type NewTask } from './task/task.model';
 import { CardComponent } from '../ui/card/card.component';
+import { TasksService } from './tasks.service';
 
 @Component({
   selector: 'app-tasks',
@@ -18,31 +17,18 @@ export class TasksComponent {
   @Input({ required: true }) name!: string;
   @Input({ required: true }) userId!: string;
 
-  tasks = DUMMY_TASKS;
   isAddingTask = false;
 
+  private tasksService = inject(TasksService);
+
   get selectedUserTasks() {
-    return this.tasks.filter((task) => task.userId === this.userId);
+    return this.tasksService.getUserTasks(this.userId);
   }
-  onCompleteTask(taskId: string) {
-    this.tasks = this.tasks.filter((task) => task.id !== taskId);
-  }
+
   onStartAddTask() {
     this.isAddingTask = true;
   }
-  onCancelAddTask() {
-    this.isAddingTask = false;
-  }
-
-  onAddTask(task: NewTask) {
-    this.tasks.unshift({
-      id: new Date().getTime.toString(),
-      userId: this.userId,
-      title: task.title,
-      summary: task.summary,
-      dueDate: task.date,
-    });
-
+  onCloseAddTask() {
     this.isAddingTask = false;
   }
 }

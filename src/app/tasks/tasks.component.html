@@ -1,5 +1,5 @@
 @if (isAddingTask) {
-  <app-modal (cancelModal)="onCancelAddTask()" (add)="onAddTask($event)" />
+  <app-modal [userId]="userId" (close)="onCloseAddTask()" />
 }
 <app-card>
   <header>
@@ -12,8 +12,10 @@
   <ul>
     @for (task of selectedUserTasks; track task.id) {
       <li>
-        <app-task [task]="task" (complete)="onCompleteTask($event)" />
+        <app-task [task]="task" />
       </li>
+    } @empty {
+      <p>{{ 'Add task !' }}</p>
     }
   </ul>
 </app-card>
