@@ -8,20 +8,11 @@ import { type User } from './user.model';
   styleUrl: './user.component.css',
 })
 export class UserComponent {
-  //With  signals input and output
-  // avatar = input.required<string>();
-  // name = input.required<string>();
-  //id=input.required<string>();
-
-  //select = output<string>();
-
   @Input({ required: true }) user!: User;
   @Input({ required: true }) selected!: boolean;
 
   @Output() select = new EventEmitter<string>();
 
-  //With signals
-  // imagePath = computed(() => 'assets/users/' + this.avatar());
   get imagePath() {
     return 'assets/users/' + this.user.avatar;
   }
