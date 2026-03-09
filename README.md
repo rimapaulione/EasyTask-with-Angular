@@ -1,59 +1,67 @@
-# MyApp
+# EasyTask
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.4.
+A task management application built with Angular 21. Users can select a person from a list, view their assigned tasks, add new tasks, and mark tasks as complete.
 
-## Development server
+## Features
 
-To start a local development server, run:
+- **User selection** — pick a user to see their tasks, with avatar display and active state highlighting
+- **Task management** — view, add, and complete tasks per user
+- **Add task modal** — form with title, summary, and due date fields; validates that the date is today or later
+- **Responsive design** — adapts to mobile (480px) and tablet (768px) breakpoints
+- **Dark purple glassmorphic UI** — custom CSS with design tokens, backdrop filters, and gradient backgrounds
 
-```bash
-ng serve
+## Tech Stack
+
+- **Angular 21** (standalone components, signals, new control flow syntax)
+- **TypeScript 5.9**
+- **Vitest** for unit testing
+- **Google Fonts** — Poppins & Roboto
+
+No external UI libraries — all styling is custom CSS.
+
+## Project Structure
+
+```
+src/app/
+├── header/          # App header with branding
+├── user/            # User card component + model
+├── tasks/
+│   ├── task/        # Single task display + model
+│   ├── modal/       # Add-task form modal
+│   └── tasks.*      # Task list + service
+├── ui/card/         # Reusable card wrapper (ng-content)
+├── dummy-users.ts   # Sample user data
+└── dummy-tasks.ts   # Sample task data
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Getting Started
 
-## Code scaffolding
+### Prerequisites
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- Node.js (v18+)
+- npm (v11+)
 
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### Install & Run
 
 ```bash
-ng generate --help
+npm install
+npm start
 ```
 
-## Building
+The dev server starts at `http://localhost:4200/` with hot reload.
 
-To build the project run:
+### Build
 
 ```bash
-ng build
+npm run build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Production output goes to the `dist/` directory.
 
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+### Test
 
 ```bash
-ng test
+npm test
 ```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Runs unit tests with Vitest.
